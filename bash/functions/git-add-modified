@@ -1,0 +1,4 @@
+git-add-modified()
+{
+    git st | grep modified | awk '{printf("%s%c", $2, 0)}' | xargs -0 git add
+}

@@ -1,0 +1,9 @@
+git-set-upstream-branch()
+{
+    # Newer versions of Git support a --show-current switch for "branch" that
+    # will simplify the command below
+    #   https://git-scm.com/docs/git-branch#Documentation/git-branch.txt---show-current
+    current_branch=$(git branch | grep '^*' | cut -f2 -d'*' | sed 's/^[[:blank:]]*//;s/[[:blank:]]*$//')
+
+    git branch --set-upstream-to=origin/$current_branch $current_branch
+}
