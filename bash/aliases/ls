@@ -1,0 +1,16 @@
+alias ls='ls -G'
+
+# comma-delimited listing
+alias l='ls -m'
+
+# long listing
+alias ll='ls -l'
+
+# same, sorted by time
+alias lst='ll -t'               
+
+# list printers
+alias lsp="lpstat -p | awk \"{print \\\$2}\""
+
+# list symbolic links in current working dir
+alias lssym='/bin/lssymlink'    
