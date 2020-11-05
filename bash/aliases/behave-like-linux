@@ -1,5 +1,5 @@
-alias unix2dos="perl -pi -e 's/\r\n|\n|\r/\r\n/g'"
 alias dos2unix="perl -pi -e 's/\r\n|\n|\r/\n/g'"
+alias unix2dos="perl -pi -e 's/\r\n|\n|\r/\r\n/g'"
 
 alias netstat-nlt="lsof -nP -i4TCP | grep LISTEN"
 

@@ -5,7 +5,7 @@ DIRNAME=$(dirname $BASH_SOURCE)
 [[ $0 == $BASH_SOURCE ]] && only_sourcing_allowed
 
 # Set up aliases
-for alias_script in $(find ${DIRNAME} -type f ! -name ${BASENAME})
+for alias_script in $(find ${DIRNAME} -type f ! -name ${BASENAME} ! -name "README.md")
 do
     source ${alias_script}
 done
