@@ -1,16 +1,14 @@
+# Colorize output.
 alias ls='ls -G'
 
-# comma-delimited listing
+# Comma-delimited listing.  Thanks HP-UX.
 alias l='ls -m'
 
-# long listing
+# Long listing.  Thanks RedHat.
 alias ll='ls -l'
 
-# same, sorted by time
-alias lst='ll -t'               
+# List hidden files only.  Ripped straight from RedHat.
+alias l.='ls -d .*'
 
-# list printers
+# List printers.
 alias lsp="lpstat -p | awk \"{print \\\$2}\""
-
-# list symbolic links in current working dir
-alias lssym='/bin/lssymlink'    
