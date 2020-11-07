@@ -34,12 +34,14 @@ Aliases for commands typically found on Linux distros.  Aliases included:
 
   **Output**:
 
+  <!-- markdownlint-disable MD013 -->
   ```console
   com.docke 10000 stephen.kirkpatrick   10u  IPv4 0x6d923c0b0000000      0t0  TCP 127.0.0.1:52387 (LISTEN)
   com.docke 10300 stephen.kirkpatrick   55u  IPv6 0x6d923c070000000      0t0  TCP *:3306 (LISTEN)
   ruby      30000 stephen.kirkpatrick    9u  IPv4 0x6d923c0b0000000      0t0  TCP *:3000 (LISTEN)
   node      30100 stephen.kirkpatrick   24u  IPv4 0x6d923c0b0000000      0t0  TCP *:3035 (LISTEN)
   ```
+  <!-- markdownlint-enable MD013 -->
 
   **Linux reference**
 
