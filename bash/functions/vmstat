@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+
 # Use in conjunction with alias free="vm_stat | vm_stat_format"
 # Source: https://apple.stackexchange.com/a/94258
 vm_stat_format()

@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+
 # Colorize output.
 alias ls='ls -G'
 
@@ -10,5 +12,6 @@ alias ll='ls -l'
 # List hidden files only.  Ripped straight from RedHat.
 alias l.='ls -d .*'
 
+# shellcheck disable=SC2142
 # List printers.
 alias lsp="lpstat -p | awk \"{print \\\$2}\""

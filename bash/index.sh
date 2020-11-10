@@ -1,20 +1,24 @@
+# shellcheck shell=bash
+
 source_index ()
 {
   SOURCE_ROOT=$1
 
-  if [[ -e ${SOURCE_ROOT} ]] && [[ -d ${SOURCE_ROOT} ]] && [[ -f ${SOURCE_ROOT}/index.sh ]]
+  if [[ -e "${SOURCE_ROOT}" ]] && [[ -d "${SOURCE_ROOT}" ]] && [[ -f "${SOURCE_ROOT}/index.sh" ]]
   then
-      source ${SOURCE_ROOT}/index.sh
+      # shellcheck source=/bash/index.sh
+      source "${SOURCE_ROOT}/index.sh"
   fi
 }
 
-SCRIPTS_ROOT=$(dirname $BASH_SOURCE)
-source ${SCRIPTS_ROOT}/lib/core.sh
+SCRIPTS_ROOT=$(dirname "${BASH_SOURCE[0]}")
+# shellcheck source=/bash/lib/core.sh
+source "${SCRIPTS_ROOT}/lib/core.sh"
 
-[[ $0 == $BASH_SOURCE ]] && only_sourcing_allowed
+(return 0 2>/dev/null) || only_sourcing_allowed
 
-ALIASES_ROOT=${SCRIPTS_ROOT}/aliases
-FUNCTIONS_ROOT=${SCRIPTS_ROOT}/functions
+ALIASES_ROOT="${SCRIPTS_ROOT}/aliases"
+FUNCTIONS_ROOT="${SCRIPTS_ROOT}/functions"
 
-source_index ${ALIASES_ROOT}
-source_index ${FUNCTIONS_ROOT}
+source_index "${ALIASES_ROOT}"
+source_index "${FUNCTIONS_ROOT}"

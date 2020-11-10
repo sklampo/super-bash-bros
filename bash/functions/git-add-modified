@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+
 git-add-modified()
 {
     git status | grep modified | awk '{printf("%s%c", $2, 0)}' | xargs -0 git add

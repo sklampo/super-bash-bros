@@ -1,11 +1,10 @@
-BASENAME=$(basename $BASH_SOURCE)
-DIRNAME=$(dirname $BASH_SOURCE)
-. ${DIRNAME}/../lib/core.sh
+# shellcheck shell=bash
 
-[[ $0 == $BASH_SOURCE ]] && only_sourcing_allowed
+INVOCATION_SOURCE=${BASH_SOURCE[0]}
+DIRNAME=$(dirname "${INVOCATION_SOURCE}")
 
-# Set up aliases
-for alias_script in $(find ${DIRNAME} -type f ! -name ${BASENAME} ! -name "README.md")
-do
-    source ${alias_script}
-done
+# shellcheck source=/bash/lib/core.sh
+source "${DIRNAME}/../lib/core.sh"
+(return 0 2>/dev/null) || only_sourcing_allowed
+
+source_collection "${INVOCATION_SOURCE}"

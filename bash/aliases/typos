@@ -1,2 +1,4 @@
+# shellcheck shell=bash
+
 alias gti='git'
 alias pdw='pwd'
