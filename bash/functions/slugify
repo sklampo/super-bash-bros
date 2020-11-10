@@ -1,5 +1,8 @@
-# Compliments of https://gist.github.com/oneohthree/f528c7ae1e701ad990e6
+# shellcheck shell=bash
+
+# Compliments of https://gist.github.com/oneohthree/f528c7ae1e701ad990e6,
+# with slight modification
 slugify ()
 {
-    echo "$@" | iconv -t ascii//TRANSLIT | sed -E s/[^a-zA-Z0-9]+/-/g | sed -E s/^-+\|-+$//g | tr A-Z a-z
+    echo "$@" | iconv -t ascii//TRANSLIT | sed -E s/[^a-zA-Z0-9]+/-/g | sed -E s/^-+\|-+$//g | tr '[:upper:]' '[:lower:]'
 }

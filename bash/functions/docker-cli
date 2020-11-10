@@ -1,17 +1,19 @@
+# shellcheck shell=bash
+
 docker-cli ()
 {
     EXIT_FAILURE=1
 
-    [[ -z "$1" ]] && echo "USAGE: docker-cli <container_name>" && return ${EXIT_FAILURE}
+    [[ -z "$1" ]] && echo "USAGE: docker-cli <container_name>" && return "${EXIT_FAILURE}"
 
-    container_id=$(docker ps -q -f name=$1)
+    container_id=$(docker ps -q -f name="$1")
 
-    if [[ -z "$container_id" ]]
+    if [[ -z "${container_id}" ]]
     then
         echo "ERROR: Docker container $1 not found"
-        return ${EXIT_FAILURE}
+        return "${EXIT_FAILURE}"
     else
         echo "Attaching to Docker container $1 with command: docker exec -it ${container_id} /bin/bash"
-        docker exec -it ${container_id} /bin/bash
+        docker exec -it "${container_id}" /bin/bash
     fi
 }

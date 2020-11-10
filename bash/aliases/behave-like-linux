@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+
 alias dos2unix="perl -pi -e 's/\r\n|\n|\r/\n/g'"
 alias unix2dos="perl -pi -e 's/\r\n|\n|\r/\r\n/g'"
 

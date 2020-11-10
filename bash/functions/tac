@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+
 tac()
 {
     INPUT=${1:-/dev/stdin}

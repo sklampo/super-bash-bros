@@ -1,3 +1,5 @@
+# shellcheck shell=bash
+
 alias myip="ifconfig en0 | grep 'inet ' | cut -f2 -d ' '"
 
 alias yarnls="yarn list --depth=0"
