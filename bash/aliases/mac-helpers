@@ -1,0 +1,7 @@
+# shellcheck shell=bash
+
+alias dnsflush="sudo killall -HUP mDNSResponder && sudo killall mDNSResponderHelper && sudo dscacheutil -flushcache"
+
+alias pdfconcat="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py"
+
+alias screensharing="/System/Library/CoreServices/Applications/Screen\ Sharing.app/Contents/MacOS/Screen\ Sharing"
