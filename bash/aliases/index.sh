@@ -1,6 +1,8 @@
 # shellcheck shell=bash
 
-INVOCATION_SOURCE=${BASH_SOURCE[0]}
+running_shell=$(ps -o command -p $$ | sed 1d)
+[[ "${running_shell}" == "-bash" ]] && INVOCATION_SOURCE=${BASH_SOURCE[0]} || INVOCATION_SOURCE=$0
+
 DIRNAME=$(dirname "${INVOCATION_SOURCE}")
 
 # shellcheck source=/bash/lib/core.sh

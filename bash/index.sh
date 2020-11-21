@@ -11,7 +11,20 @@ source_index ()
   fi
 }
 
-SCRIPTS_ROOT=$(dirname "${BASH_SOURCE[0]}")
+running_shell=$(ps -o command -p $$ | sed 1d)
+case "${running_shell}" in
+  *bash)
+    SCRIPTS_ROOT=$(dirname "${BASH_SOURCE[0]}")
+    ;;
+  *zsh)
+    SCRIPTS_ROOT=$(dirname "${0}")
+    ;;
+  *)
+    echo "Only Bash and Zsh supported"
+    exit 1
+    ;;
+esac
+
 # shellcheck source=/bash/lib/core.sh
 source "${SCRIPTS_ROOT}/lib/core.sh"
 
