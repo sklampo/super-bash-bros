@@ -1,0 +1,16 @@
+# shellcheck shell=bash
+
+post-date-vcr-token-expires-at()
+{
+    EXIT_FAILURE=1
+
+    [[ -z "$1" ]] && echo "USAGE: post-date-vcr-token-expires-at <path>" && return "${EXIT_FAILURE}"
+
+    search_pattern='"token_expires_at":"'$(date +%Y)
+
+    # shellcheck disable=SC2013
+    for file in $(grep -Hr "${search_pattern}" "${1}" | cut -f1 -d':')
+    do
+        echo -e ':%s/'"${search_pattern}"'/"token_expires_at":"3000/g\n:wq\n' | ex "${file}"
+    done
+}
