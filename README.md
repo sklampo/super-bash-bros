@@ -25,21 +25,17 @@ git clone git@github.com:sklampo/shell.git ~/.super_bash_bros
 
 2. Source this project index from your profile
 
- #### Bash
+  **Bash**
 
- **NOTE THE DOUBLE `>> ~.bash_profile` !**
-
- ```
+  ```bash
 cat <<'EOF' >> ~/.bash_profile
 test -e "${HOME}/.super_bash_bros/bash/index.sh" && source "${HOME}/.super_bash_bros/bash/index.sh"
 EOF
 ```
 
- #### Z shell
+  **Z shell**
 
- **NOTE THE DOUBLE `>> ~.zprofile` !**
-
- ```
+  ```zsh
 cat <<'EOF' >> ~/.zprofile
 test -e "${HOME}/.super_bash_bros/bash/index.sh" && source "${HOME}/.super_bash_bros/bash/index.sh"
 EOF
@@ -48,8 +44,9 @@ EOF
 
 ## Organization
 
+Key files in project:
+
 ```console
-├── LICENSE
 ├── README.md
 └── bash
     ├── aliases
