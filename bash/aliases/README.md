@@ -193,6 +193,20 @@ Aliases for listing directories (or printers)
   FirstPrinter
   SecondPrinter
   ```
+  
+### `misc`
+
+Aliases so random that they have no better place to go.
+
+* `starwars`: Watch Episode IV in all of its ASCII art glory.
+
+  **Usage**:
+  
+  ```bash
+  starwars
+  ```
+  
+  ![C3PO lecturing R2D2](images/c3po-telnet-star-wars.png)
 
 ### `typos`
 

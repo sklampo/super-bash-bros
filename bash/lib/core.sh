@@ -16,5 +16,5 @@ source_collection ()
   do
     # shellcheck disable=SC1090
     source "${script}"
-  done < <(find "${DIRNAME}" -type f \! -name "${BASENAME}" \! -name "README.md" -print0)
+  done < <(find "${DIRNAME}" -type f \! -name "${BASENAME}" \! -name "README.md" -maxdepth 1 -print0)
 }
