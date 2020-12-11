@@ -53,14 +53,16 @@ Aliases for commands typically found on Linux distros.  Aliases included:
   tcp6       0      0 :::3306                 :::*                    LISTEN
   ```
 
-* `systemctl`: A command used to administer `Systemd` services.  This alias
-  simply maps to `brew services`.  Handy for someone used to working in
-  `Systemd`-based systems.  An unnecessary abstraction for everyone else.
+* `brewctl`: Shorthand for `brew services`.  Inspired by the `systemctl`
+  command used to administer `Systemd` services.  Handy for someone used
+  to working in `Systemd`-based systems or one who resorts to Google every
+  time they need to start/restart a Brew service.  An unnecessary abstraction
+  for everyone else.
 
   **Usage**:
 
   ```bash
-  systemctl start mysql@5.7
+  brewctl start mysql@5.7
   ```
 
 ### `dev-helpers`
