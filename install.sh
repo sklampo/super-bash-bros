@@ -5,8 +5,8 @@
 # Configuration
 #
 # -------------------------------------------------------------------------
-GIT_ARCHIVE_ROOT="shell-master"
-INSTALLATION_DIR="${HOME}/.super_bash_bros2"
+GIT_ARCHIVE_ROOT="super-bash-bros-master"
+INSTALLATION_DIR="${HOME}/.super-bash-bros"
 EXIT_FAILURE=1
 
 # -------------------------------------------------------------------------
@@ -83,7 +83,7 @@ find . -print -depth | cpio -pdum --quiet "${INSTALLATION_DIR}"
 
 # Set up shell library upon login
 cat <<'EOF' >> "${profile}"
-test -e "${HOME}/.super_bash_bros2/bash/index.sh" && source "${HOME}/.super_bash_bros2/bash/index.sh"
+test -e "${HOME}/.super-bash-bros/bash/index.sh" && source "${HOME}/.super-bash-bros/bash/index.sh"
 EOF
 
 # -------------------------------------------------------------------------
