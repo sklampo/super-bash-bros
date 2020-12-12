@@ -9,10 +9,8 @@ It is 100% compatible with Bash and almost 100% compatible with Z shell.
 
 ### One-liner Installation
 
-(Does not exist)
-
 ```sh
-
+curl -sS https://raw.githubusercontent.com/sklampo/shell/master/install.sh | bash
 ```
 
 ### Piece-wise Installation
