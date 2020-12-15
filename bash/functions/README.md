@@ -5,6 +5,15 @@
 Operations too complicated for an `alias` have been expressed as functions.
 Each function is defined in a file matching the name of the function.
 
+### Summary
+* [docker-cli](#docker-cli)
+* [git-add-modified](git-add-modified)
+* [git-set-upstream-branch](git-set-upstream-branch)
+* [post-date-vcr-token-expires-at](post-date-vcr-token-expires-at)
+* [slugify](slugify)
+* [tac](tac)
+* [vmstat](vmstat)
+
 ## Individual Functions
 <!-- markdownlint-disable MD036 -->
 

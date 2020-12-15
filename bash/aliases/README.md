@@ -2,14 +2,17 @@
 
 ## Purpose
 
-Simpler (often one-liner) utilities are expressed as shell aliases.  They are organized into
-similar groups, named "Collections".  The following collections are available:
-* [behave-like-linux](behave-like-linux) - commands common to Linux that
+Simpler (often one-liner) utilities are expressed as shell aliases.  They are
+organized into similar groups, named "Collections".
+
+### Summary
+
+* [behave-like-linux](#behave-like-linux) - commands common to Linux that
 should be on MacOS
-* [dev-helpers](dev-helpers)
-* [ls](ls) - as in "LS" - not is; listing utilities
-* [misc](misc) - utilities that do not aid in software development
-* [typos](typos) - frequently used and frequently mistyped commands
+* [dev-helpers](#dev-helpers)
+* [ls](#ls) - (as in "LS" - not _is_); listing utilities
+* [misc](#misc) - utilities that do not aid in software development
+* [typos](#typos) - frequently used and frequently mistyped commands
 
 ## Collection
 
