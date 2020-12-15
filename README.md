@@ -6,7 +6,7 @@ aid in software development, primarily targeted for MacOS.
 ## Compatability
 
 The collection is 100% compatible with Bash and almost 100% compatible with
-[Z shell](zsh-compatibility).
+[Z shell](https://github.com/sklampo/super-bash-bros/issues?q=is%3Aopen+label%3Azsh+label%3Abug)
 
 ## Installation
 
@@ -69,7 +69,7 @@ The following utilities are highly-recommended and can be installed via `brew in
 
 ## Contributing
 
-See `CONTRIBUTING.md` (does not exist yet).
+~See `CONTRIBUTING.md`~ (does not exist yet).
 
 This repo consists entirely of shell and Markdown files.  Shell files are
 checked by the [ShellCheck](https://github.com/koalaman/shellcheck) tool.
@@ -79,6 +79,5 @@ A Github Action is configured that uses
 [Super-Linter](https://github.com/github/super-linter), to provide automatic
 linting on each pull request.
 
-[aliases]: bash/aliases/README.md
-[functions]: bash/functions/README.md
-[zsh-compatibility]: https://github.com/sklampo/super-bash-bros/issues?q=is%3Aopen+label%3Azsh+label%3Abug
+[aliases]: bash/aliases
+[functions]: bash/functions

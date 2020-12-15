@@ -3,7 +3,7 @@
 ## Purpose
 
 Operations too complicated for an `alias` have been expressed as functions.
-Each function is defined in a file bearing the function name.
+Each function is defined in a file matching the name of the function.
 
 ## Individual Functions
 <!-- markdownlint-disable MD036 -->
