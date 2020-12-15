@@ -1,12 +1,12 @@
 # Super Bash Bros
 
-This is a collection of shell utilities built as aliases and functions to
-aid in software development.
+This is a collection of shell utilities built as [aliases] and [functions] to
+aid in software development, primarily targeted for MacOS.
 
 ## Compatability
 
 The collection is 100% compatible with Bash and almost 100% compatible with
-Z shell.
+[Z shell](zsh-compatibility).
 
 ## Installation
 
@@ -78,3 +78,7 @@ Markdown files are linted using [markdownlint](https://github.com/DavidAnson/mar
 A Github Action is configured that uses
 [Super-Linter](https://github.com/github/super-linter), to provide automatic
 linting on each pull request.
+
+[aliases]: bash/aliases/README.md
+[functions]: bash/functions/README.md
+[zsh-compatibility]: https://github.com/sklampo/super-bash-bros/issues?q=is%3Aopen+label%3Azsh+label%3Abug
