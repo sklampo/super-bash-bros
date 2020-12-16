@@ -138,6 +138,35 @@ Simply run this command with any arguments.
 git-set-upstream-branch
 ```
 
+### `post-date-vcr-token-expires-at`
+
+Sets the token expiration date to the [year 3000] for file(s) in specified path.
+
+**SYNOPSIS**
+
+`post-date-vcr-token-expires-at` path
+
+**DESCRIPTION**
+
+The `post-date-vcr-token-expires-at` utility searches the provide `path`,
+setting each occurrence of `token_expires_at` to a value of 3000.  `path`
+can be a single file or a directory to recurse through.
+
+The use-case for this utility is updating [vcr] recordings.
+
+**EXIT STATUS**
+
+The `git-set-upstream-branch` utility exits with the status code of the
+underlying `git branch` operation.
+
+**EXAMPLE**
+
+Simply run this command with any arguments.
+
+```bash
+git-set-upstream-branch
+```
+
 ### `slugify`
 
 Generates a "[slug](https://en.wikipedia.org/wiki/Clean_URL#Slug)" from a
@@ -225,3 +254,5 @@ cat numbers.txt | tac
 ### `vmstat`
 
 <!-- markdownlint-enable MD036 -->
+[year 3000]: https://en.wikipedia.org/wiki/List_of_Late_Night_with_Conan_O%27Brien_sketches#In_the_Year_2000/3000
+[vcr]: https://github.com/vcr/vcr 

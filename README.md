@@ -6,7 +6,7 @@ aid in software development, primarily targeted for MacOS.
 ## Compatability
 
 The collection is 100% compatible with Bash and almost 100% compatible with
-[Z shell](https://github.com/sklampo/super-bash-bros/issues?q=is%3Aopen+label%3Azsh+label%3Abug)
+[Z shell].
 
 ## Installation
 
@@ -50,8 +50,8 @@ Key files in project:
 ```console
 ├── README.md
 └── bash
-    ├── [aliases]
-    ├── [functions]
+    ├── aliases
+    ├── functions
     │   ├── index.sh
     ├── index.sh
     └── lib
@@ -61,7 +61,7 @@ Key files in project:
 ## Recommended
 
 The following utilities are a fine additon to one's command line toolkit and
-can be installed via `brew install <utility>`.  None are required by any
+can be installed via `brew install`.  None are required by any
 code in this repo.
 
 * `tree`
@@ -83,3 +83,4 @@ linting on each pull request.
 
 [aliases]: bash/aliases#aliases
 [functions]: bash/functions#functions
+[Z shell]: https://github.com/sklampo/super-bash-bros/issues?q=is%3Aopen+label%3Azsh+label%3Abug
