@@ -50,8 +50,8 @@ Key files in project:
 ```console
 ├── README.md
 └── bash
-    ├── aliases
-    ├── functions
+    ├── [aliases]
+    ├── [functions]
     │   ├── index.sh
     ├── index.sh
     └── lib
@@ -60,7 +60,9 @@ Key files in project:
 
 ## Recommended
 
-The following utilities are highly-recommended and can be installed via `brew install <utility>`.
+The following utilities are a fine additon to one's command line toolkit and
+can be installed via `brew install <utility>`.  None are required by any
+code in this repo.
 
 * `tree`
 * `watch`
@@ -79,5 +81,5 @@ A Github Action is configured that uses
 [Super-Linter](https://github.com/github/super-linter), to provide automatic
 linting on each pull request.
 
-[aliases]: bash/aliases
-[functions]: bash/functions
+[aliases]: bash/aliases#aliases
+[functions]: bash/functions#functions
