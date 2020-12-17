@@ -6,7 +6,7 @@ source_index ()
 
   if [[ -e "${SOURCE_ROOT}" ]] && [[ -d "${SOURCE_ROOT}" ]] && [[ -f "${SOURCE_ROOT}/index.sh" ]]
   then
-      # shellcheck source=/bash/index.sh
+      # shellcheck source=/shell/index.sh
       source "${SOURCE_ROOT}/index.sh"
   fi
 }
@@ -25,7 +25,7 @@ case "${running_shell}" in
     ;;
 esac
 
-# shellcheck source=/bash/lib/core.sh
+# shellcheck source=/shell/lib/core.sh
 source "${SCRIPTS_ROOT}/lib/core.sh"
 
 (return 0 2>/dev/null) || only_sourcing_allowed

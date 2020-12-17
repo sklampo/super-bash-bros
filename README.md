@@ -30,7 +30,7 @@ git clone git@github.com:sklampo/super-bash-bros.git ~/.super-bash-bros
 
   ```bash
 cat <<'EOF' >> ~/.bash_profile
-test -e "${HOME}/.super-bash-bros/bash/index.sh" && source "${HOME}/.super-bash-bros/bash/index.sh"
+test -e "${HOME}/.super-bash-bros/shell/index.sh" && source "${HOME}/.super-bash-bros/shell/index.sh"
 EOF
 ```
 
@@ -38,7 +38,7 @@ EOF
 
   ```zsh
 cat <<'EOF' >> ~/.zprofile
-test -e "${HOME}/.super-bash-bros/bash/index.sh" && source "${HOME}/.super-bash-bros/bash/index.sh"
+test -e "${HOME}/.super-bash-bros/shell/index.sh" && source "${HOME}/.super-bash-bros/shell/index.sh"
 EOF
 ```
 
@@ -49,7 +49,7 @@ Key files in project:
 
 ```console
 ├── README.md
-└── bash
+└── shell
     ├── aliases
     ├── functions
     │   ├── index.sh
@@ -81,6 +81,6 @@ A Github Action is configured that uses
 [Super-Linter](https://github.com/github/super-linter), to provide automatic
 linting on each pull request.
 
-[aliases]: bash/aliases#aliases
-[functions]: bash/functions#functions
+[aliases]: shell/aliases#aliases
+[functions]: shell/functions#functions
 [Z shell]: https://github.com/sklampo/super-bash-bros/issues?q=is%3Aopen+label%3Azsh+label%3Abug
