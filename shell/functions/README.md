@@ -292,4 +292,4 @@ cat numbers.txt | tac
 
 <!-- markdownlint-enable MD036 -->
 [year 3000]: https://en.wikipedia.org/wiki/List_of_Late_Night_with_Conan_O%27Brien_sketches#In_the_Year_2000/3000
-[vcr]: https://github.com/vcr/vcr 
+[vcr]: https://github.com/vcr/vcr
