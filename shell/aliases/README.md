@@ -2,6 +2,18 @@
 
 ## Purpose
 
+Simpler (often one-liner) utilities are expressed as shell aliases.  They are
+organized into similar groups, named "Collections".
+
+### Summary
+
+* [behave-like-linux](#behave-like-linux) - commands common to Linux that
+should be on MacOS
+* [dev-helpers](#dev-helpers)
+* [ls](#ls) - (as in "LS" - not _is_); listing utilities
+* [misc](#misc) - utilities that do not aid in software development
+* [typos](#typos) - frequently used and frequently mistyped commands
+
 ## Collection
 
 ### `behave-like-linux`
@@ -56,8 +68,8 @@ Aliases for commands typically found on Linux distros.  Aliases included:
 * `brewctl`: Shorthand for `brew services`.  Inspired by the `systemctl`
   command used to administer `Systemd` services.  Handy for someone used
   to working in `Systemd`-based systems or one who resorts to Google every
-  time they need to start/restart a Brew service.  An unnecessary abstraction
-  for everyone else.
+  time they need to remember how to start/restart a Brew service.  An
+  unnecessary abstraction for everyone else.
 
   **Usage**:
 
@@ -108,7 +120,8 @@ Aliases useful for software development.  Aliases included:
   ✨  Done in 0.74s.
   ```
 
-* `bundle_1.17.3`: Runs Bundler version 1.17.3
+* `bundle_1.17.3`: Runs Bundler version 1.17.3.  _Note: Bundler version 1.17.3
+not included :)_
 
   **Usage**:
 

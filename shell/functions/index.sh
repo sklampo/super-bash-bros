@@ -5,7 +5,7 @@ running_shell=$(ps -o command -p $$ | sed 1d)
 
 DIRNAME=$(dirname "${INVOCATION_SOURCE}")
 
-# shellcheck source=/bash/lib/core.sh
+# shellcheck source=/shell/lib/core.sh
 source "${DIRNAME}/../lib/core.sh"
 (return 0 2>/dev/null) || only_sourcing_allowed
 

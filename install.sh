@@ -83,7 +83,7 @@ find . -print -depth | cpio -pdum --quiet "${INSTALLATION_DIR}"
 
 # Set up shell library upon login
 cat <<'EOF' >> "${profile}"
-test -e "${HOME}/.super-bash-bros/bash/index.sh" && source "${HOME}/.super-bash-bros/bash/index.sh"
+test -e "${HOME}/.super-bash-bros/shell/index.sh" && source "${HOME}/.super-bash-bros/shell/index.sh"
 EOF
 
 # -------------------------------------------------------------------------
