@@ -1,4 +1,4 @@
-# ![](https://fontmeme.com/permalink/201217/e68d3b06f41faa862312491460b69d7e.png)
+# ![Super Bash Bros.](https://fontmeme.com/permalink/201217/e68d3b06f41faa862312491460b69d7e.png)
 
 This is a collection of shell utilities built as [aliases] and [functions] to
 aid in software development, primarily targeted for MacOS.
