@@ -2,17 +2,18 @@
 
 ## Purpose
 
-Operations too complicated for an `alias` have been expressed as functions.
-Each function is defined in a file matching the name of the function.
+Operations too complicated to express as an `alias` have been written as
+functions.  Each function is defined in a file matching the name of the
+function.
 
 ### Summary
 * [docker-cli](#docker-cli)
+* [free](#free)
 * [git-add-modified](#git-add-modified)
 * [git-set-upstream-branch](#git-set-upstream-branch)
 * [post-date-vcr-token-expires-at](#post-date-vcr-token-expires-at)
 * [slugify](#slugify)
 * [tac](#tac)
-* [vmstat](#vmstat)
 
 ## Individual Functions
 <!-- markdownlint-disable MD036 -->
@@ -55,6 +56,38 @@ in that container, printing this output:
 Attaching to Docker container stop-hammer-time with command: docker exec -it 25f025f025f0 /bin/bash
 ```
 <!-- markdownlint-enable MD013 -->
+
+### `free`
+
+Display memory statistics
+
+**SYNOPSIS**
+
+`free`
+
+**DESCRIPTION**
+
+Display amount of free and used memory in the system.  This utilizes the
+MacOS `vm_stat` command and formats it into a less-cryptic format.
+
+**EXAMPLE**
+
+```console
+$ free
+free:                      104.39 Mi
+active:                   5173.54 Mi
+inactive:                 5164.84 Mi
+speculative:                 5.26 Mi
+throttled:                   0.00 Mi
+wired down:               5830.80 Mi
+purgeable:                 442.45 Mi
+copy-on-write:         4477381.42 Mi
+zero filled:          38270650.36 Mi
+reactivated:           1613707.82 Mi
+purged:                 729443.88 Mi
+stored in compressor:         25122.75 Mi
+occupied by compressor:           103.28 Mi
+```
 
 ### `git-add-modified`
 
@@ -156,15 +189,21 @@ The use-case for this utility is updating [vcr] recordings.
 
 **EXIT STATUS**
 
-The `git-set-upstream-branch` utility exits with the status code of the
-underlying `git branch` operation.
+The `post-date-vcr-token-expires-at` utility exits with the status code of
+1 when missing the required `path` parameter.
 
 **EXAMPLE**
 
-Simply run this command with any arguments.
+To update a single file:
 
 ```bash
-git-set-upstream-branch
+post-date-vcr-token-expires-at spec/cassettes/VCR_example_group_metadata/records_an_http_request.yml
+```
+
+To update a suite of recordings:
+
+```bash
+post-date-vcr-token-expires-at spec/cassettes/VCR_example_group_metadata/
 ```
 
 ### `slugify`
@@ -251,8 +290,7 @@ tac < numbers.txt
 cat numbers.txt | tac
 ```
 
-### `vmstat`
-
+```
 <!-- markdownlint-enable MD036 -->
 [year 3000]: https://en.wikipedia.org/wiki/List_of_Late_Night_with_Conan_O%27Brien_sketches#In_the_Year_2000/3000
 [vcr]: https://github.com/vcr/vcr 
