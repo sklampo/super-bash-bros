@@ -3,6 +3,9 @@
 This is a collection of shell utilities built as [aliases] and [functions] to
 aid in software development, primarily targeted for MacOS.
 
+The utilities are documented in detail in their respective directories,
+[aliases] and [functions].
+
 ## Compatability
 
 The collection is 100% compatible with Bash and almost 100% compatible with
