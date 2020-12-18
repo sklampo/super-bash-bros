@@ -1,6 +1,6 @@
 # Contributing Guidelines
 
-If you encounter a bug or have an idea, feel free to open an 
+If you encounter a bug or have an idea, feel free to open an
 [issue](https://github.com/sklampo/super-bash-bros/issues/new).
 
 ## Development
