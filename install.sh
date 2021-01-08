@@ -16,7 +16,7 @@ EXIT_FAILURE=1
 # -------------------------------------------------------------------------
 cleanup ()
 {
-  rm -rf "${STAGING_DIR}"
+  [[ -e "${STAGING_DIR}" ]] && rm -rf "${STAGING_DIR}"
 }
 
 abort ()
@@ -24,6 +24,29 @@ abort ()
   [[ -n "${1}" ]] && echo "${1}"
   cleanup
   exit "${EXIT_FAILURE}"
+}
+
+profile_configured()
+{
+  grep -q '.super-bash-bros/shell/index.sh' "${1}"
+}
+
+configure_profile()
+{
+  # Set up shell library upon login
+  cat <<'EOF' >> "${1}"
+test -e "${HOME}/.super-bash-bros/shell/index.sh" && source "${HOME}/.super-bash-bros/shell/index.sh"
+EOF
+  echo "Updated ${1}."
+}
+
+install_super_bash_bros()
+{
+  # Download master, unpack, and copy to destination
+  curl -sS "https://codeload.github.com/sklampo/shell/zip/master" -o "${SUPER_BASH_ARCHIVE}"
+  unzip -q "${SUPER_BASH_ARCHIVE}" || abort "Error encountered unpacking shell archive"
+  cd "${GIT_ARCHIVE_ROOT}" || abort "Unable to descend into root of archive"
+  find . -print -depth | cpio -pdum --quiet "${INSTALLATION_DIR}"
 }
 
 # -------------------------------------------------------------------------
@@ -62,18 +85,13 @@ esac
 
 # -------------------------------------------------------------------------
 #
-# Install
+# Installation
 #
 # -------------------------------------------------------------------------
 
 pushd . > /dev/null
 cd "${STAGING_DIR}" || exit "${EXIT_FAILURE}"
-
-# Download master, unpack, and copy to destination
-curl -sS "https://codeload.github.com/sklampo/shell/zip/master" -o "${SUPER_BASH_ARCHIVE}"
-unzip -q "${SUPER_BASH_ARCHIVE}" || abort "Error encountered unpacking shell archive"
-cd "${GIT_ARCHIVE_ROOT}" || abort "Unable to descend into root of archive"
-find . -print -depth | cpio -pdum --quiet "${INSTALLATION_DIR}"
+install_super_bash_bros
 
 # -------------------------------------------------------------------------
 #
@@ -81,14 +99,11 @@ find . -print -depth | cpio -pdum --quiet "${INSTALLATION_DIR}"
 #
 # -------------------------------------------------------------------------
 
-# Set up shell library upon login
-cat <<'EOF' >> "${profile}"
-test -e "${HOME}/.super-bash-bros/shell/index.sh" && source "${HOME}/.super-bash-bros/shell/index.sh"
-EOF
+profile_configured "${profile}" || configure_profile "${profile}"
 
 # -------------------------------------------------------------------------
 #
-# Cleanup and success notice
+# Cleanup and success notification
 #
 # -------------------------------------------------------------------------
 # shellcheck disable=SC2164
@@ -97,11 +112,9 @@ cleanup
 
 # Off to the races
 cat << EOF
+Setup complete.  Super Bash library will be available upon next login.
 
-Setup complete.  ${profile} updated.
-
-Super Bash library will be available upon next login.  To begin using now, run:
-
+To begin using now, execute:
     source ${profile}
 
 EOF
