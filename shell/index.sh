@@ -11,27 +11,29 @@ source_index ()
   fi
 }
 
+finish_setup ()
+{
+  # shellcheck source=/shell/lib/core.sh
+  source "${SCRIPTS_ROOT}/lib/core.sh"
+
+  (return 0 2>/dev/null) || only_sourcing_allowed
+
+  ALIASES_ROOT="${SCRIPTS_ROOT}/aliases"
+  FUNCTIONS_ROOT="${SCRIPTS_ROOT}/functions"
+
+  source_index "${ALIASES_ROOT}"
+  source_index "${FUNCTIONS_ROOT}"
+}
+
 running_shell=$(ps -o command -p $$ | sed 1d)
 case "${running_shell}" in
   *bash)
     SCRIPTS_ROOT=$(dirname "${BASH_SOURCE[0]}")
+    finish_setup
     ;;
   *zsh)
     SCRIPTS_ROOT=$(dirname "${0}")
-    ;;
-  *)
-    echo "Only Bash and Zsh supported"
-    exit 1
+    finish_setup
     ;;
 esac
 
-# shellcheck source=/shell/lib/core.sh
-source "${SCRIPTS_ROOT}/lib/core.sh"
-
-(return 0 2>/dev/null) || only_sourcing_allowed
-
-ALIASES_ROOT="${SCRIPTS_ROOT}/aliases"
-FUNCTIONS_ROOT="${SCRIPTS_ROOT}/functions"
-
-source_index "${ALIASES_ROOT}"
-source_index "${FUNCTIONS_ROOT}"
