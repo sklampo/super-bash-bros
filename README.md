@@ -74,7 +74,7 @@ code in this repo.
 
 ## Contributing
 
-~See `CONTRIBUTING.md`~ (does not exist yet).
+See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 This repo consists entirely of shell and Markdown files.  Shell files are
 checked by the [ShellCheck](https://github.com/koalaman/shellcheck) tool.
