@@ -17,11 +17,18 @@ for commit guidelines.
 
 ### Removed
 
+## [0.2.0] - 2021-02-21
+
+### Added
+
+Introduced [terse](shell/aliases/README.md#terse) aliases.
+
 ## [0.1.1] - 2021-02-20
 
-### Changed
+### Added
 
 Introduced this change log.
 
-[Unreleased]: https://github.com/sklampo/super-bash-bros/compare/v0.1.1...HEAD
+[Unreleased]: https://github.com/sklampo/super-bash-bros/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/sklampo/super-bash-bros/compare/v0.1.1...v0.2.0
 [0.1.1]: https://github.com/sklampo/super-bash-bros/compare/v0.1.0...v0.1.1
