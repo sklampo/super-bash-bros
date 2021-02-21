@@ -1,0 +1,19 @@
+# shellcheck shell=bash
+
+# -------------------------------------------------------------------------
+#
+# Super-shorthand aliases
+#
+# -------------------------------------------------------------------------
+
+# Command history
+alias h='history'
+
+# Display jobs in current session with process ID
+alias j='jobs -l'
+
+# Logout - useful when <crtl>-d is disabled - i.e. `set -o ignoreeof`
+alias lo='logout'
+
+# Add current directory to directory stack - useful in conjunction with `popd`
+alias pd='pushd .'
