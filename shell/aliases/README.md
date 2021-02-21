@@ -12,6 +12,7 @@ should be on MacOS
 * [dev-helpers](#dev-helpers)
 * [ls](#ls) - (as in "LS" - not _is_); listing utilities
 * [misc](#misc) - utilities that do not aid in software development
+* [terse](#terse) - super-shorthand aliases
 * [typos](#typos) - frequently used and frequently mistyped commands
 
 ## Collection
@@ -222,6 +223,110 @@ Aliases so random that they have no better place to go.
   ```
   
   ![C3PO lecturing R2D2](images/c3po-telnet-star-wars.png)
+
+### `terse`
+
+Super-shorthand aliases to not-so-shorthand commands
+
+* `h`: Display command history. *Aliased to `history`*.
+
+  **Usage**:
+
+  What was that `pip` command I ran earlier?
+
+  ```bash
+  h | grep pip
+  ```
+
+  What was I doing before I took lunch?
+
+  ```bash
+  h 10
+  ```
+
+  Note that commands can be re-executed by their number in the command
+  history.  Taking the first question as an example, one can re-execute
+  the Django installation by entering its number in the command history,
+  preceded by a `!`.
+
+  ```console
+  $ h | grep pip
+    278  which pip
+    283  pip install Django==3.1.2
+
+  $ !283
+  ```
+
+* `j`: Display jobs in current session **with** process ID.  *Aliased to
+`jobs -l`*.
+
+  **Usage**:
+
+  ```console
+  $ j
+  [1]+ 23068 Suspended: 18           vim temp.txt
+  [2]  23082 Suspended: 18           vim temp2.txt
+  [3]- 23107 Suspended: 18           vim temp3.txt
+  [4]  23649 Running                 xterm &
+  [5]  23729 Running                 xclock &
+  [6]  23797 Running                 xeyes &
+  ```
+
+  The basic format of the `jobs` output:
+
+    | `Job Number` | `Default` | `PID` | `Status` | `Command` |
+
+  The job number can be used with the `fg`, `bg`, `kill`, and `wait` commands.
+  The second column indicates which process will be used as the default
+for `fg` and `bg`.  A `+` indicates the default. A `-` indicates the default
+if the current job exits.
+
+* `lo`: Logout of current shell.  *Aliased to `logout`*.
+
+* `pd`: Add current directory to the directory stack.  *Aliased to `pushd .`*.
+
+  Pushes current working directory onto the directory stack, acting like
+  a bookmark.
+
+  **Usage**:
+
+  ```bash
+  pd
+
+  ```
+
+  **Example**:
+
+  Imagine working in a deeply-nested directory and you need to switch to
+  other directories to complete some tasks, before returning to your
+  current directory...
+
+  ```console
+  $ pwd
+  /Users/me/super-bash-bros/shell/aliases/images
+
+  $ pd
+  ~/super-bash-bros/shell/aliases/images ~/super-bash-bros/shell/aliases/images
+  ```
+
+  Change directories
+
+  <!-- markdownlint-disable MD014 -->
+  ```console
+  $ cd ~/Documents/
+  $ cd ~/Downloads/
+  ```
+  <!-- markdownlint-enable MD014 -->
+
+  Pop the directory stack to return to the one saved with `pd`.
+
+  ```console
+  $ popd
+  ~/super-bash-bros/shell/aliases/images
+
+  $ pwd
+  /Users/me/super-bash-bros/shell/aliases/images
+  ```
 
 ### `typos`
 
