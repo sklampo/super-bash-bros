@@ -1,0 +1,20 @@
+# shellcheck shell=bash
+
+function brony() {
+  (time=${1:-60}
+  sleep "$time"
+  osascript -e "set Volume 50"
+  pmset displaysleepnow
+  open "https://www.youtube.com/watch?v=ZcBNxuKZyN4") & 
+  disown
+  exit
+}
+
+function cats() {
+  (time=${1:-60}
+  sleep "$time"
+  open "http://cat-bounce.com"
+  pmset displaysleepnow) & 
+  disown 
+  exit
+}
