@@ -7,6 +7,7 @@ functions.  Each function is defined in a file matching the name of the
 function.
 
 ### Summary
+
 * [docker-cli](#docker-cli)
 * [free](#free)
 * [git-add-modified](#git-add-modified)
@@ -229,8 +230,8 @@ code >0 if an error occurs.
 
 **EXAMPLE**
 
-Pass `slugify` a string.  _Note that following example uses strong quotes
-(') so `!` is not interpreted by the shell._
+Pass `slugify` a string.  *Note that following example uses strong quotes
+(') so `!` is not interpreted by the shell.*
 
 Running the command:
 

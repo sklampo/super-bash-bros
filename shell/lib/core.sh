@@ -15,6 +15,6 @@ source_collection ()
   while IFS= read -r -d '' script
   do
     # shellcheck disable=SC1090
-    source "${script}"
+    file -b "${script}" | grep -i text && source "${script}" || echo "Ignoring file ${script}"
   done < <(find "${DIRNAME}" -type f \! -name "${BASENAME}" \! -name "README.md" -maxdepth 1 -print0)
 }

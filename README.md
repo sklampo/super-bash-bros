@@ -15,9 +15,13 @@ The collection is 100% compatible with Bash and almost 100% compatible with
 
 ### One-liner Installation
 
+<!-- markdownlint-disable MD013 -->
+
 ```sh
 curl -sS https://raw.githubusercontent.com/sklampo/super-bash-bros/master/install.sh | bash
 ```
+
+<!-- markdownlint-enable MD013 -->
 
 ### Piece-wise Installation
 
@@ -27,9 +31,9 @@ curl -sS https://raw.githubusercontent.com/sklampo/super-bash-bros/master/instal
 git clone git@github.com:sklampo/super-bash-bros.git ~/.super-bash-bros
 ```
 
-2. Source this project index from your profile
+1. Source this project index from your profile
 
-  **Bash**
+#### Bash
 
   ```bash
 cat <<'EOF' >> ~/.bash_profile
@@ -37,14 +41,13 @@ test -e "${HOME}/.super-bash-bros/shell/index.sh" && source "${HOME}/.super-bash
 EOF
 ```
 
-  **Z shell**
+#### Z shell
 
   ```zsh
 cat <<'EOF' >> ~/.zprofile
 test -e "${HOME}/.super-bash-bros/shell/index.sh" && source "${HOME}/.super-bash-bros/shell/index.sh"
 EOF
 ```
-
 
 ## Organization
 

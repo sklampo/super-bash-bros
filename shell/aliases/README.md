@@ -134,7 +134,7 @@ not included :)_
 
 Aliases for listing directories (or printers)
 
-* `ls`: *Colorized listing*.  Aliased to `ls -G`, which enables colorized output.
+* `ls`: _Colorized listing_.  Aliased to `ls -G`, which enables colorized output.
 
   **Usage**:
 
@@ -142,7 +142,7 @@ Aliases for listing directories (or printers)
   ls
   ```
 
-* `l`: *Comma-delimited listing*.  Aliased to `ls -m`.  Shorthand from HP-UX.
+* `l`: _Comma-delimited listing_.  Aliased to `ls -m`.  Shorthand from HP-UX.
 
   **Usage**:
 
@@ -156,7 +156,7 @@ Aliases for listing directories (or printers)
   Applications, Desktop, Documents, Downloads, file1.txt, file2.txt, ...
   ```
 
-* `ll`: *Long listing*.  Aliased to `ls -l`.
+* `ll`: _Long listing_.  Aliased to `ls -l`.
 
   **Usage**:
 
@@ -175,7 +175,7 @@ Aliases for listing directories (or printers)
   -rw-r--r--    1 username  DOMAIN\User         555 Apr 01  2020 file2.txt
   ```
 
-* `l.`: *List hidden files and directories only*.  Compliments of RedHat
+* `l.`: _List hidden files and directories only_.  Compliments of RedHat
 
   **Usage**:
 
@@ -195,7 +195,7 @@ Aliases for listing directories (or printers)
   .zshrc
   ```
 
-* `lsp`: *List printers*.
+* `lsp`: _List printers_.
 
   **Usage**:
 
@@ -228,7 +228,7 @@ Aliases so random that they have no better place to go.
 
 Super-shorthand aliases to not-so-shorthand commands
 
-* `h`: Display command history. *Aliased to `history`*.
+* `h`: Display command history. _Aliased to `history`_.
 
   **Usage**:
 
@@ -257,8 +257,8 @@ Super-shorthand aliases to not-so-shorthand commands
   $ !283
   ```
 
-* `j`: Display jobs in current session **with** process ID.  *Aliased to
-`jobs -l`*.
+* `j`: Display jobs in current session **with** process ID.  _Aliased to
+`jobs -l`_.
 
   **Usage**:
 
@@ -281,9 +281,9 @@ Super-shorthand aliases to not-so-shorthand commands
 for `fg` and `bg`.  A `+` indicates the default. A `-` indicates the default
 if the current job exits.
 
-* `lo`: Logout of current shell.  *Aliased to `logout`*.
+* `lo`: Logout of current shell.  _Aliased to `logout`_.
 
-* `pd`: Add current directory to the directory stack.  *Aliased to `pushd .`*.
+* `pd`: Add current directory to the directory stack.  _Aliased to `pushd .`_.
 
   Pushes current working directory onto the directory stack, acting like
   a bookmark.
@@ -333,6 +333,6 @@ if the current job exits.
 Common typos, so that the computer will do what I'm thinking, even when I'm
 not saying it.
 
-* `gti`: *Aliased to `git`*.
+* `gti`: _Aliased to `git`_.
 
-* `pdw`: *Aliased to `pwd`*.
+* `pdw`: _Aliased to `pwd`_.
