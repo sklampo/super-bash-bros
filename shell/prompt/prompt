@@ -1,0 +1,1 @@
+PS1="$NO_COLOUR""\n""$GREEN""\u@\h ""$BROWN""\w""$NO_COLOUR""\n$ "
