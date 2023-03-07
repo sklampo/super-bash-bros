@@ -1,0 +1,3 @@
+# shellcheck shell=bash
+
+PS1="$NO_COLOR""\n""$GREEN""\u@\h ""$BROWN""\w""$NO_COLOR""\n$ "
