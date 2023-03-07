@@ -24,8 +24,7 @@ finish_setup ()
 
 prompt_setup ()
 {
-  source "${SCRIPTS_ROOT}/prompt/colors"
-  source "${SCRIPTS_ROOT}/prompt/prompt"
+  source "${SCRIPTS_ROOT}/prompt/primary"
 }
 
 running_shell=$(ps -o command -p $$ | sed 1d)
