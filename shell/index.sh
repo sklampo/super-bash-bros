@@ -24,6 +24,7 @@ finish_setup ()
 
 prompt_setup ()
 {
+  # shellcheck source=/shell/prompt/primary
   source "${SCRIPTS_ROOT}/prompt/primary"
 }
 
