@@ -5,7 +5,7 @@ function brony() {
   sleep "$time"
   osascript -e "set Volume 50"
   pmset displaysleepnow
-  open "https://www.youtube.com/watch?v=ZcBNxuKZyN4") & 
+  open "https://www.youtube.com/watch?v=ZcBNxuKZyN4") &
   disown
   exit
 }
@@ -14,7 +14,10 @@ function cats() {
   (time=${1:-60}
   sleep "$time"
   open "http://cat-bounce.com"
-  pmset displaysleepnow) & 
-  disown 
+  pmset displaysleepnow) &
+  disown
   exit
 }
+
+# Next iteration: bind to several ports and invoke 'say' with different voices
+alias netsay="nohup ncat -l 1111 -c '/usr/bin/say' --keep-open < /dev/null > /dev/null &"
