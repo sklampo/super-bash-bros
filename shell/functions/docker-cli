@@ -6,14 +6,39 @@ docker-cli ()
 
     [[ -z "$1" ]] && echo "USAGE: docker-cli <container_name>" && return "${EXIT_FAILURE}"
 
-    container_id=$(docker ps -q -f name="$1")
+    container_id_list=$(docker ps -q -f name="$1")
+    container_count=$(wc -w <<< $container_id_list)
 
-    if [[ -z "${container_id}" ]]
+    if [[ $(wc -w <<< $container_id_list) -eq 0 ]]
     then
         echo "ERROR: Docker container $1 not found"
         return "${EXIT_FAILURE}"
     else
-        echo "Attaching to Docker container $1 with command: docker exec -it ${container_id} /bin/bash"
+        # Check if more than one match was returned
+        if [[ $(wc -w <<< $container_id_list) -eq 1 ]]
+        then
+            container_id=${container_id_list}
+        else
+            echo -e "Multiple matches were found.\n"
+            docker ps -f name="$1" --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Ports}}"
+            echo
+            PS3="Enter your selection ($(seq $(bc <<< $(wc -w <<< $cl)+1) | paste -s -d ',' /dev/stdin)) > "
+
+            select opt in $container_id_list quit
+            do
+                case $opt in
+                    quit)
+                        return 0
+                        ;;
+                    *)
+                        container_id=${opt}
+                        break
+                esac
+            done
+        fi
+
+        container_name=$(docker ps -f id=${container_id} --format "{{.Names}}")
+        echo "Attaching to Docker container ${container_name} with command: docker exec -it ${container_id} /bin/bash"
         docker exec -it "${container_id}" /bin/bash
     fi
 }
