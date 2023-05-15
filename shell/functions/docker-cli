@@ -6,12 +6,19 @@ docker-cli ()
 
     [[ -z "$1" ]] && echo "USAGE: docker-cli <container_name>" && return "${EXIT_FAILURE}"
 
-    container_id_list=$(docker ps -q -f name="$1")
+    if [[ "${1}" == "." ]]
+    then
+      target=$(basename $PWD)
+    else
+      target="${1}"
+    fi
+
+    container_id_list=$(docker ps -q -f name="${target}")
     container_count=$(wc -w <<< $container_id_list)
 
     if [[ $(wc -w <<< $container_id_list) -eq 0 ]]
     then
-        echo "ERROR: Docker container $1 not found"
+        echo "ERROR: Docker container ${target} not found"
         return "${EXIT_FAILURE}"
     else
         # Check if more than one match was returned
